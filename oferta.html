@@ -133,27 +133,41 @@
             text-align: center;
             font-weight: 600;
             margin-top: 3%;
-            background-color: rgb(175, 115, 2);
+            background-color: #f2f2f2;
             height: 60px;
             align-items: center;
-            border: 3px solid red;
+            border: 3px solid #f2f2f2;
             margin: auto;
             justify-content: center;
             display: flex;
-            box-shadow: 0px 0px 15px red;
             border-radius: 15px;
             margin-left: 5%;
             margin-right: 5%;
             margin-bottom: 3%;
         }
+
+       #naveg{
+        margin-top: 3%;
+        border: 1px solid green;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: green;
+       }
+       #naveg:hover{
+        margin-top: 3%;
+        border: 1px solid red;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: red;
+       }
     </style>
 </head>
 <body>
 <p></p><br>
     <h2 class="test">eBooks de Teste</h2>
     <nav>
-        <a href="index.html" style="color: blanchedalmond;"><b>Home</b></a>|
-        <a href="biblioteca.html" style="color: blanchedalmond;"><b>Biblioteca</b></a>
+        <a href="index.html" style="color: blanchedalmond;" id="naveg"><b>Home</b></a>|
+        <a href="biblioteca.html" style="color: blanchedalmond;" id="naveg"><b>Biblioteca</b></a>
     </nav>
     
         <p id="chegada"></p>
@@ -207,6 +221,33 @@
 <!--code java here-->
       
 
+        <script>
+            function notification_ofert(){
+                const iconPath= "images/logotipo_principal.jpg";
+                if("Notification" in window){
+                    if(Notification.permission == "granted"){
+                        if(!localStorage.getItem("notification_oferta_exist")){
+                            new Notification("E-books Word",{
+                                body: "Aqui estarão os eBooks de teste para você analisar. Explore-os e descubra o valor dos eBooks da eBooks Word. Aproveite a leitura!",
+                                icon: iconPath,
+                            });
+                            localStorage.setItem("notification_oferta_exist","true");
+                        }
+                    }
+                }else{
+                    Notification.requestPermission.then(function (permission){
+                        if(Notification.permission == "granted"){
+                            if(!localStorage.getItem("notification_oferta_exist")){
+                                new Notification("E-books Word",{
+                                    body:"Aqui estarão os eBooks de teste para você analisar. Explore-os e descubra o valor dos eBooks da eBooks Word. Aproveite a leitura!",
+                                    icon: iconPath,
+                                });
+                            }
+                        }
+                    });
+                }
+            }
+            window.onload =  notification_ofert();
         </script>
 
 
