@@ -76,7 +76,9 @@
 
         .ebook:hover {
             transform: scale(1.05);
-            background-color: blanchedalmond;            
+            background-color: blanchedalmond;  
+            border: 2px solid red;
+            box-shadow: 0px 0px 15px red;          
         }
 
         .ebook img {
@@ -127,19 +129,28 @@
             box-shadow: 0 0 10px rgb(50,150,219,0.5);
             transform: scale(1.08);
         }
+        #topB{
+            font-weight: 600;
+            border: 3px solid red;
+            box-shadow: 0px 0px 15px red;
+            justify-content: center;
+            margin-bottom: 3%;
+        }
     </style>
 </head>
 <body>
 <p></p><br>
-    <header style="background-color: rgb(201, 143, 73);; border-radius: 20px;margin-left: 10%; margin-right: 10%;">
+    <header id="topB" style="background-color: rgb(250, 201, 109); border-radius: 20px;margin-left: 10%; margin-right: 10%;">
         <h1 style="text-align: center; margin-top: 2%; padding-top:20px;"><b style="text-transform: uppercase;">Biblioteca</b></h1>
-        <h2 style="color: blanchedalmond; text-align: center; padding-bottom: 2%;">Descubra o poder da leitura</h2>
+        <h2 style="color: rgb(139, 84, 0); text-align: center; padding-bottom: 2%; font-weight: 600;">Descubra o poder da leitura</h2>
     </header>
 
     <nav>
         <a href="index.html"><b>Home</b></a>
         |
         <a href="peqsquizar.html"><b>Pesquisar</b></a>
+        |
+        <a href="mail.html"><b>eBooks de Teste</b></a>
     </nav>
     
         <p id="chegada"></p>
@@ -1446,7 +1457,7 @@
 <!--simulation time for ofert 5m,10m,30m,60m,-->
       
         <script>
-            if(!localStorage.getItem("exibido_oferta")){
+            if(!localStorage.getItem("exibido_oferta2")){
             setTimeout(function oferta(){
                 var oferta = confirm("Indeciso sobre comprar na eBooks World? Não se preocupe! Ao clicar em 'OK', você poderá baixar nossos eBooks de teste e avaliar por si mesmo se vale a pena. Nossos eBooks de teste estão disponíveis para você explorar, oferecendo uma amostra do que temos a oferecer!");
                 if(oferta == true){
@@ -1454,8 +1465,8 @@
                 }else{
                     window.location = "#";
                 }
-            }, 9000);  
-            localStorage.setItem("exibido_oferta","true"); 
+            }, 120000);  
+            localStorage.setItem("exibido_oferta2","true"); 
         }
         </script>
 

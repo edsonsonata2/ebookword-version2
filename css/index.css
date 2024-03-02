@@ -32,18 +32,4 @@ input[type="text"]{
     animation: pes 2s ease-out;
     margin: auto;
 }
-@keyframes goback1{
-    0%{
-        transform: translateY(-100%);
-        opacity: 1;
-    }
-    50%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-.goback{
-    animation: goback1 2s ease-out;
-} 
+
