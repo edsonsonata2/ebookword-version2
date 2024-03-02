@@ -6,61 +6,67 @@
 <link rel="icon" href="./images/logotipo_principal.jpg" sizes="16x16" type="image/X-UA-Compatible">
 <title>mail</title>
 <style>
-body {
-  font-family: 'Playfair Display', serif;
-  background-color: orange;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+      body {
+        font-family: 'Playfair Display', serif;
+        background-color: orange;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-.container {
-  background-color: #ffff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin-bottom: 5%;
-}
+      .container {
+        background-color: #ffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 5%;
+      }
 
-h2 {
-  margin-bottom: 20px;
-}
+      h2 {
+        margin-bottom: 20px;
+      }
 
-.input-group {
-  margin-bottom: 20px;
-}
+      .input-group {
+        margin-bottom: 20px;
+      }
 
-.input-group label {
-  display: block;
-  margin-bottom: 5px;
-}
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
 
-.input-group input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
 
-.button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+      .button {
+        background-color: rgb(59, 158, 59);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
 
-.button:hover {
-  background-color: #45a049;
-}
-input{
-  background-color: #dcdfdf;;
-}
+      .button:hover {
+        background-color: green;
+      }
+      input{
+        background-color: #dcdfdf;;
+      }
+      #button_no{
+          background-color: rgb(255, 67, 67);
+      }
+      #button_no:hover{
+          background-color: red;
+      }
 </style>
 </head>
 <body>
@@ -69,15 +75,20 @@ input{
   <form action="https://formsubmit.co/info.ebooksword@gmail.com" method="post">
     <div class="input-group">
       <label for="username" style="text-align: left;"><b>Nome:</b></label>
-      <input type="text" id="username" name="nome" required placeholder="Insira o seu nome..." title="Coloque aqui o seu nome">
+      <input type="text" id="username" name="nome" required placeholder="Insira aqui o seu nome..." title="Coloque aqui o seu nome">
     </div>
     <div class="input-group">
       <label for="email" style="text-align: left;"><b>Email:</b></label>
-      <input type="email" id="email" name="email" required placeholder="Insira o seu email..." title="Coloque aqui o seu email">
+      <input type="email" id="email" name="email" required placeholder="Insira aqui o seu email..." title="Coloque aqui o seu email">
     </div>
-    <button class="button" type="submit">Enviar as minhas informações para ter acesso aos ebooks de teste</button><br><br>
     <a href="oferta.html">
-    <button class="button" type="button" style="background-color: red;">Não enviar as minhas informações mas mesmo assim ter acesso aos ebooks de teste</button>
+    <button class="button" type="button">Já enviei minhas informações antes</button><br><br>
+    </a>
+    <button class="button" type="submit">Enviar as minhas informações para ter acesso aos ebooks de teste e receber ofertas</button><br><br>
+    <a href="oferta.html">
+    </a>
+    <a href="oferta.html">
+    <button class="button" id="button_no" type="button">Não receber ofertas e nem enviar as minhas informações mas mesmo assim ter acesso aos ebooks de teste</button>
     
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://edsonsonata2.github.io/ebookword/oferta.html">
@@ -85,5 +96,6 @@ input{
 </form>
 <p style="text-align: center;">Ao adquirir nossos ebooks, você concorda com os <a href="terms.html" target="_blank">termos e direitos</a> e os <a href="terms.html" target="_blank">Termos de uso</a> da plataforma.</p>
 </div><br>
+
 </body>
 </html>
