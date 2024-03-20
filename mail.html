@@ -67,6 +67,18 @@
       #button_no:hover{
           background-color: red;
       }
+      #processando {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
 </style>
 </head>
 <!--NÃO SE ESQUEÇA DE TROCAR NO INPUT NEXT(DEPOIS DO USUÁRIO SUBMETER O EMAIL) APENAS TROCA QUANDO HOSPEDARES O SITE!-->
@@ -85,18 +97,41 @@
     <a href="oferta.html">
     <button class="button" id="ja_env" type="button" style="background-color: rgb(247, 149, 3);">Já enviei minhas informações antes</button><br><br>
     </a>
-    <button class="button" type="submit">Enviar as minhas informações para ter acesso aos ebooks de teste e receber ofertas</button><br><br>
+    <button class="button" type="submit" id="botao">Enviar as minhas informações para ter acesso aos ebooks de teste e receber ofertas</button>
+    <div id="processando">Processando...</div>
+    <br><br>
     <a href="oferta.html">
     </a>
     <a href="oferta.html">
     <button class="button" id="button_no" type="button">Não receber ofertas e nem enviar as minhas informações mas mesmo assim ter acesso aos ebooks de teste</button>
     
     <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://edsonsonata2.github.io/ebookword/oferta.html">
+    <input type="hidden" name="_next" value="https://edsonsonata2.github.io/ebookword-version2/oferta.html">
   </a>
 </form>
 <p style="text-align: center;">Ao adquirir nossos ebooks, você concorda com os <a href="terms.html" target="_blank">termos e direitos</a> e os <a href="terms.html" target="_blank">Termos de uso</a> da plataforma.</p>
 </div><br>
+
+
+
+<!--Efeito de processamento-->
+<script>
+  document.getElementById('botao').addEventListener('click', function() {
+      var botao = this;
+      var processando = document.getElementById('processando');
+      
+      // Oculta o botão e exibe a mensagem de "processando"
+      botao.style.display = 'none';
+      processando.style.display = 'block';
+      
+      // Simule um processo demorado (por exemplo, aguarde 3 segundos)
+      setTimeout(function() {
+          // Após o processamento, reexiba o botão e oculte a mensagem de "processando"
+          botao.style.display = 'block';
+          processando.style.display = 'none';
+      }, 7000); // 7000 milissegundos (7 segundos)
+  });
+  </script>
 
 </body>
 </html>
