@@ -67,22 +67,26 @@
       #button_no:hover{
           background-color: red;
       }
+    
       #processando {
             display: none;
             position: fixed;
-            top: 50%;
+            top: 54%;
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: #333;
             color: #fff;
             padding: 10px;
             border-radius: 5px;
+            text-align: center;
         }
 
 </style>
 </head>
 <!--NÃO SE ESQUEÇA DE TROCAR NO INPUT NEXT(DEPOIS DO USUÁRIO SUBMETER O EMAIL) APENAS TROCA QUANDO HOSPEDARES O SITE!-->
 <body>
+  <div id="processando">Enviando as informações por favor aguarde...</div>
+
 <div class="container">
   <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Deixa a <b style="color: orange;">E-books Word</b> saber quem é você!</h1>
   <form action="https://formsubmit.co/configuracao.ebooksword@gmail.com" method="post">
@@ -98,7 +102,6 @@
     <button class="button" id="ja_env" type="button" style="background-color: rgb(247, 149, 3);">Já enviei minhas informações antes</button><br><br>
     </a>
     <button class="button" type="submit" id="botao">Enviar as minhas informações para ter acesso aos ebooks de teste e receber ofertas</button>
-    <div id="processando">Processando...</div>
     <br><br>
     <a href="oferta.html">
     </a>
@@ -129,7 +132,7 @@
           // Após o processamento, reexiba o botão e oculte a mensagem de "processando"
           botao.style.display = 'block';
           processando.style.display = 'none';
-      }, 7000); // 7000 milissegundos (7 segundos)
+      }, 30000); // 30000 milissegundos (30 segundos)
   });
   </script>
 
