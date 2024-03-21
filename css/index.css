@@ -32,29 +32,4 @@ input[type="text"]{
     animation: pes 2s ease-out;
     margin: auto;
 }
-@keyframes process{
-    0%{
-        transform: translateX(-100%);
-        opacity: 1;
-    }
-    50%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-#processando {
-    animation: process 2s ease-out;
-            display: none;
-            position: fixed;
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: red;
-            color: #ffff;
-            padding: 10px;
-            border-radius: 5px;
-            border: 2px solid black;
-            text-align: center;
-        }
+
