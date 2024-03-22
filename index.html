@@ -108,41 +108,11 @@
     border-radius: 25px;
     padding: 12px;
 }
-@keyframes process{
-    0%{
-        transform: translateX(-100%);
-        opacity: 1;
-    }
-    50%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-#processando {
-    animation: process 2s ease-out;
-            display: none;
-            position: fixed;
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: red;
-            color: #ffff;
-            padding: 10px;
-            border-radius: 5px;
-            border: 2px solid black;
-            text-align: center;
-        }
-        
     </style>
         
     </head>
     
     <body style="background-color: orange; user-select: none;">
-        <div id="processando" style="display:none;">Carregando por favor aguarde...</div>
-
-
         <main>
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
@@ -676,21 +646,6 @@
         <script src="js/jquery.sticky.js"></script>
         <script src="js/click-scroll.js"></script>
         <script src="js/custom.js"></script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var processando = document.getElementById('processando');
-                
-                // Oculta o botão e exibe a mensagem de "processando"
-                processando.style.display = 'block';
-                
-                // Simule um processo demorado (por exemplo, aguarde 3 segundos)
-                setTimeout(function() {
-                    // Após o processamento, reexiba o botão e oculte a mensagem de "processando"
-                    processando.style.display = 'none';
-                }, 3000); // 3000 milissegundos (3 segundos)
-            });
-            </script>
 
     </body>
 </html>
