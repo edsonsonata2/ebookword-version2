@@ -80,15 +80,21 @@
             border-radius: 5px;
             text-align: center;
         }
+        #porque_resp{
+          border: 1px solid black;
+          padding: 15px;
+          background-color: rgb(255, 215, 142);
+          border-radius: 10px;
+        }
 
 </style>
 </head>
 <!--NÃO SE ESQUEÇA DE TROCAR NO INPUT NEXT(DEPOIS DO USUÁRIO SUBMETER O EMAIL) APENAS TROCA QUANDO HOSPEDARES O SITE!-->
 <body>
-  <div id="processando">Enviando as informações por favor aguarde...</div>
+  <div id="processando">Enviandomo seu contato por favor aguarde...</div>
 
 <div class="container">
-  <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Deixa a <b style="color: orange;">E-Books Word</b> saber quem é você!</h1>
+  <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Deixe a <b style="color: orange;">E-Books Word</b> saber quem são seus leitores!</h1>
   <form action="https://formsubmit.co/configuracao.ebooksword@gmail.com" method="post">
     <div class="input-group">
       <label for="username" style="text-align: left;"><b>Nome:</b></label>
@@ -98,15 +104,17 @@
       <label for="email" style="text-align: left;"><b>Email:</b></label>
       <input type="email" id="email" name="email" required placeholder="Insira aqui o seu melhor email..." title="Coloque aqui o seu email">
     </div>
+    <a href="#" style="text-decoration: none; color: black;" onclick="porque_contato()"><p style="text-align: center;">Porquê enviar meu <b style="color: red;">contato?</b></p></a>
+    <p style="display: none;" id="porque_resp">Queremos estar mais próximos de você! <br>Deixando seu contato você receberá conteúdos <br>exclusivos, promoções e muita diversão literária diretamente<br> na sua caixa de entrada! Vamos juntos nessa jornada de leitura? 📚😊</p>
     <a href="oferta.html">
-    <button class="button" id="ja_env" type="button" style="background-color: rgb(247, 149, 3);">Já enviei minhas informações antes</button><br><br>
+    <button class="button" id="ja_env" type="button" style="background-color: rgb(247, 149, 3);">Já enviei o meu contato antes</button><br><br>
     </a>
-    <button class="button" type="submit" id="botao">Enviar as minhas informações para ter acesso aos ebooks de teste e receber ofertas</button>
+    <button class="button" type="submit" id="botao">Enviar o meu contato para ter acesso aos ebooks de teste e receber ofertas</button>
     <br><br>
     <a href="oferta.html">
     </a>
     <a href="oferta.html">
-    <button class="button" id="button_no" type="button">Não receber ofertas e nem enviar as minhas informações mas mesmo assim ter acesso aos ebooks de teste</button>
+    <button class="button" id="button_no" type="button">Não receber ofertas e nem enviar o meu contato mas mesmo assim ter acesso aos ebooks de teste</button>
     
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://edsonsonata2.github.io/ebookword-version2/oferta.html">
@@ -116,6 +124,13 @@
 </div><br>
 
 
+<script>
+   function porque_contato(){
+    var contato = document.getElementById("porque_resp");
+    contato.style.display = "block";
+}
+
+</script>
 
 <!--Efeito de processamento-->
 <script>
