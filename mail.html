@@ -107,8 +107,9 @@
       <label for="email" style="text-align: left;"><b>Email:</b></label>
       <input type="email" id="email" name="email" required placeholder="Insira aqui o seu melhor email..." title="Coloque aqui o seu email">
     </div>
-    <a href="#" style="text-decoration: none; color: black;" onclick="porque_contato()"><p style="text-align: center;">Por que enviar meu <b style="color: red;">contato?</b></p></a>
+    <a href="#" style="text-decoration: none; color: black;" onclick="porque_contato()"><p style="text-align: center;" onclick="porque_contato2()">Por que enviar meu <b style="color: red;">contato?</b></p></a>
     <p style="display: none;" id="porque_resp">Queremos estar mais próximos de você! <br>Deixando seu contato você receberá conteúdos <br>exclusivos, promoções e muita diversão literária diretamente<br> na sua caixa de entrada! Vamos juntos nessa jornada de leitura? 📚😊</p>
+    <a href="#" onclick="fechar()"><p style="display: none;" id="porque_resp2">Fechar</p></a>
     <a href="oferta.html">
     <button class="button" id="ja_env" type="button" style="background-color: rgb(247, 149, 3);">Já enviei meu contato antes</button><br><br>
     </a>
@@ -131,6 +132,25 @@
    function porque_contato(){
     var contato = document.getElementById("porque_resp");
     contato.style.display = "block";
+}
+
+</script>
+
+<script>
+  function porque_contato2(){
+   var contato2 = document.getElementById("porque_resp2");
+   contato2.style.display = "block";
+}
+
+</script>
+
+<script>
+  function fechar(){
+   var fechar = document.getElementById("porque_resp");
+   fechar.style.display = "none";
+
+   var fechar2 = document.getElementById("porque_resp2");
+   fechar2.style.display = "none";
 }
 
 </script>
