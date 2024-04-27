@@ -89,11 +89,33 @@
           background-color: rgb(255, 215, 142);
           border-radius: 10px;
         }
+        #loader {
+        border: 16px solid #f3f3f3; /* Cor do círculo */
+        border-top: 16px solid orange; /* Cor do círculo de cima */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite; /* Animação do giro */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -60px; /* Metade da altura */
+        margin-left: -60px; /* Metade da largura */
+        z-index: 9999; /* Garante que o loader esteja sempre na parte superior */
+        display: none; /* Inicialmente oculto */
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 
 </style>
 </head>
 <!--NÃO SE ESQUEÇA DE TROCAR NO INPUT NEXT(DEPOIS DO USUÁRIO SUBMETER O EMAIL) APENAS TROCA QUANDO HOSPEDARES O SITE!-->
 <body>
+  <div id="loader"></div>
+
   <div id="processando">Enviando seu contato por favor aguarde...</div>
 
 <div class="container">
@@ -172,6 +194,20 @@
           processando.style.display = 'none';
       }, 30000); // 30000 milissegundos (30 segundos)
   });
+  </script>
+    <script>
+      // Mostrar o loader quando a navegação começa
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var loader = document.getElementById("loader");
+      loader.style.display = "block";
+  });
+
+  // Ocultar o loader quando a página é totalmente carregada
+  window.addEventListener("load", function() {
+      var loader = document.getElementById("loader");
+      loader.style.display = "none";
+  });
+
   </script>
 
 </body>

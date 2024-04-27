@@ -20,9 +20,31 @@
         ul {
             margin-left: 20px;
         }
+        #loader {
+        border: 16px solid #f3f3f3; /* Cor do círculo */
+        border-top: 16px solid orange; /* Cor do círculo de cima */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite; /* Animação do giro */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -60px; /* Metade da altura */
+        margin-left: -60px; /* Metade da largura */
+        z-index: 9999; /* Garante que o loader esteja sempre na parte superior */
+        display: none; /* Inicialmente oculto */
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
     </style>
 </head>
 <body style="text-align: left; color: red; background-color: rgb(255, 162, 162);">
+    <div id="loader"></div>
+
     <h1 style="background-color: white;">Termos e Direitos da <br><b style="color: orange;">E-Books Word</b></h1><br><br>
     <pre><p>Ao comprar e utilizar os ebooks desta plataforma, você <br>concorda com os seguintes termos e direitos:</p></pre>
     <ul><pre>
@@ -68,5 +90,23 @@
     <pre><p>Reservamo-nos o direito de cooperar com autoridades <br>policiais, agências governamentais ou terceiros para investigar e resolver quaisquer violações <br>destes termos de uso ou atividades ilegais relacionadas ao uso da plataforma.</p>
     <p>Estes termos estão sujeitos a alterações sem aviso prévio. <br>Ao continuar utilizando os serviços da plataforma, você concorda em estar vinculado aos termos e <br> condições atualizados.</p>
     <p>Se tiver alguma dúvida ou preocupação sobre estes termos, <br>entre em contato conosco.</p></pre>
+
+
+    <script>
+        // Mostrar o loader quando a navegação começa
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var loader = document.getElementById("loader");
+        loader.style.display = "block";
+    });
+
+    // Ocultar o loader quando a página é totalmente carregada
+    window.addEventListener("load", function() {
+        var loader = document.getElementById("loader");
+        loader.style.display = "none";
+    });
+
+    </script>
+
+
 </body>
 </html>

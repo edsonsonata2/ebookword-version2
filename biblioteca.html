@@ -176,6 +176,26 @@
         padding: 15px;
         font-weight: 600;
        }
+       #loader {
+        border: 16px solid #f3f3f3; /* Cor do círculo */
+        border-top: 16px solid orange; /* Cor do círculo de cima */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite; /* Animação do giro */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -60px; /* Metade da altura */
+        margin-left: -60px; /* Metade da largura */
+        z-index: 9999; /* Garante que o loader esteja sempre na parte superior */
+        display: none; /* Inicialmente oculto */
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
     </style>
 </head>
 <body>
@@ -195,6 +215,7 @@
     <div class="ebook-container">
         <!-- Aqui estarão os ebooks -->
 
+        <div id="loader"></div>
 
 
 
@@ -2872,7 +2893,19 @@
         </script>
 
         <!--end of the simulation-->
+        <script>
+            // Mostrar o loader quando a navegação começa
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var loader = document.getElementById("loader");
+            loader.style.display = "block";
+        });
 
+        // Ocultar o loader quando a página é totalmente carregada
+        window.addEventListener("load", function() {
+            var loader = document.getElementById("loader");
+            loader.style.display = "none";
+        });
+        </script>
 
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
